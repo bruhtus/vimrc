@@ -92,7 +92,6 @@ catch /^Vim\%((\a\+)\)\=:E185/
       endif
     endif
   endfunction
-
   command! ColorsOn call <SID>colorscheme_init()
 endtry
 
@@ -567,4 +566,5 @@ autocmd vimrc FileType markdown
 " Section: gitcommit filetype
 
 autocmd vimrc FileType gitcommit
+      \ setlocal spell complete+=kspell |
       \ nnoremap <expr> <buffer> <silent> <localleader>\ exists(':DiffGitCached') == 2 ? ':DiffGitCached<CR>' : ''
