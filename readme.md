@@ -3,7 +3,7 @@
 This repo is for one-file vim configuration or vimrc. The benefits of using one-file vim config:
 - Only need to download one file.
 - Not have dependency problem (because only one file).
-- Only download the colorscheme by default if no `vim-plug` file found.
+- Can be used without colorscheme (only default mappings and options, use `ColorsOn` command to download and apply colorscheme).
 - Can be used without plugin (only default mappings and options, use `PlugOn` command to install the plugin).
 
 ## The Difference

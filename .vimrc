@@ -83,13 +83,17 @@ try
     set termguicolors
   endif
 catch /^Vim\%((\a\+)\)\=:E185/
-  if empty(glob('~/.vim/colors/seoul256mod.vim'))
-    silent! exe '!curl -fLo ~/.vim/colors/seoul256mod.vim --create-dirs https://raw.githubusercontent.com/bruhtus/dotfiles/master/.config/nvim/colors/seoul256mod.vim'
-    colo seoul256mod
-    if $TERM != 'linux' && has('termguicolors')
-      set termguicolors
+  function! s:colorscheme_init()
+    if empty(glob('~/.vim/colors/seoul256mod.vim'))
+      silent! exe '!curl -fLo ~/.vim/colors/seoul256mod.vim --create-dirs https://raw.githubusercontent.com/bruhtus/dotfiles/master/.config/nvim/colors/seoul256mod.vim'
+      colo seoul256mod
+      if $TERM != 'linux' && has('termguicolors')
+        set termguicolors
+      endif
     endif
-  endif
+  endfunction
+
+  command! ColorsOn call <SID>colorscheme_init()
 endtry
 
 " Section: disable default plugin
@@ -137,13 +141,9 @@ set viewoptions-=options shortmess-=S shortmess+=F
 set nolangremap langnoremap
 
 if exists('+cursorlineopt') | set cursorline cursorlineopt=number | endif
-
 if exists('+wildmenu') | set wildmenu | endif
-
 if exists('&termwinkey') | set termwinkey=<C-p> | endif
-
 if v:version > 703 || v:version == 703 && has('patch541') | set formatoptions+=j | endif
-
 syntax on | filetype plugin indent on
 
 " Section: default mappings
