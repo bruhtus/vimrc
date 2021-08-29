@@ -79,17 +79,13 @@ endtry
 
 try
   colo seoul256mod
-  if $TERM != 'linux' && has('termguicolors')
-    set termguicolors
-  endif
+  if $TERM != 'linux' && has('termguicolors') | set termguicolors | endif
 catch /^Vim\%((\a\+)\)\=:E185/
   function! s:colorscheme_init()
     if empty(glob('~/.vim/colors/seoul256mod.vim'))
       silent! exe '!curl -fLo ~/.vim/colors/seoul256mod.vim --create-dirs https://raw.githubusercontent.com/bruhtus/dotfiles/master/.config/nvim/colors/seoul256mod.vim'
       colo seoul256mod
-      if $TERM != 'linux' && has('termguicolors')
-        set termguicolors
-      endif
+      if $TERM != 'linux' && has('termguicolors') | set termguicolors | endif
     endif
   endfunction
   command! ColorsOn call <SID>colorscheme_init()
@@ -359,8 +355,7 @@ function! s:gitbranch_detect(path) abort
 endfunction
 
 let s:save_cpo = &cpo
-set cpo&vim
-set laststatus=2 noshowmode
+set cpo&vim laststatus=2 noshowmode
 
 function! StatuslineComponent() abort
 
