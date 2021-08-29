@@ -10,7 +10,7 @@ augroup END
 
 let s:packlist = [
       \ ['wellle/targets.vim', {}],
-      \ ['ronakg/quickr-preview.vim', { 'for': 'qf', 'on': '<Plug>(quickr_preview)' }],
+      \ ['ronakg/quickr-preview.vim', { 'for': 'qf' }],
       \ ['bruhtus/bufstop', { 'branch': 'personal', 'on': '<Plug>(Bufstop-preview)' }],
       \ ['junegunn/fzf', { 'on':
       \  ['Files',
