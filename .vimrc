@@ -526,6 +526,11 @@ nnoremap <silent>  <leader>h :<C-u>silent! Lines<CR>
 nnoremap <silent>  <leader>u :<C-u>silent! BLines<CR>
 nnoremap <silent>  <leader>o :<C-u>silent! Rg<CR>
 
+" Section: netrw
+
+let g:loaded_netrwPlugin       = 0
+nnoremap gx :call netrw#BrowseX(expand((exists("g:netrw_gx")? g:netrw_gx : '<cfile>')),netrw#CheckIfRemote())<CR>
+
 " Section: quickfix and location list
 
 autocmd vimrc FileType qf
