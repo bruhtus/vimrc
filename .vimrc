@@ -168,6 +168,11 @@ inoremap <silent> <M-a> <C-g>u<C-o>a
 inoremap <silent> <M-~> <C-g>u<C-o>~<C-[>
 inoremap <silent> <M-U> <C-[>:t .<CR>==
 
+if exists(':stopinsert') == 2
+  execute "set <M-w>=\ew"
+  inoremap <silent> <M-w> <C-o>w<C-o>:stopinsert<CR>
+endif
+
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
@@ -216,8 +221,6 @@ nnoremap <silent> gh m':<C-u>call search('^'. matchstr(getline('.'), '\(^\s*\)')
 
 inoremap , <C-g>u,
 inoremap . .<C-g>u
-inoremap <C-w> <C-g>u<C-w>
-inoremap <C-u> <C-g>u<C-u>
 
 vnoremap < <gv
 vnoremap > >gv
