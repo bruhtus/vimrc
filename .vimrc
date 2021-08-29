@@ -524,17 +524,11 @@ let g:fzf_action = {
 let g:fzf_preview_window = ['up:50%:hidden', 'ctrl-/']
 
 " Note: need to use original command for lazy load in vim-plug
-nnoremap <silent> <Plug>(Fzf-cwd-files) :<C-u>silent! Files<CR>
-nnoremap <silent> <Plug>(Fzf-home-files) :<C-u>silent! Files ~<CR>
-nnoremap <silent> <Plug>(Fzf-lines) :<C-u>silent! Lines<CR>
-nnoremap <silent> <Plug>(Fzf-blines) :<C-u>silent! BLines<CR>
-nnoremap <silent> <Plug>(Fzf-rg) :<C-u>silent! Rg<CR>
-
-nmap <leader>i <Plug>(Fzf-cwd-files)
-nmap <leader>f <Plug>(Fzf-home-files)
-nmap <leader>h <Plug>(Fzf-lines)
-nmap <leader>u <Plug>(Fzf-blines)
-nmap <leader>o <Plug>(Fzf-rg)
+nnoremap <silent>  <leader>i :<C-u>silent! Files<CR>
+nnoremap <silent>  <leader>f :<C-u>silent! Files ~<CR>
+nnoremap <silent>  <leader>h :<C-u>silent! Lines<CR>
+nnoremap <silent>  <leader>u :<C-u>silent! BLines<CR>
+nnoremap <silent>  <leader>o :<C-u>silent! Rg<CR>
 
 " Section: quickfix and location list
 
