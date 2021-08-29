@@ -116,7 +116,6 @@ set wildmode=longest:full,full
 set wildignore=*/.git/*,*.pdf,*.jpg,*jpeg,*.png,*.epub,*.mobi
 
 set autoindent softtabstop=-69 shiftwidth=2 shiftround
-
 autocmd vimrc BufEnter *
       \ execute 'setlocal '
       \ . (search('^\t', 'n') && !search('^  ', 'n') ? 'noexpandtab nosmarttab tabstop=2' :
@@ -124,7 +123,6 @@ autocmd vimrc BufEnter *
       \ 'expandtab smarttab')
 
 set nobackup noswapfile nostartofline
-
 set ignorecase smartcase incsearch
 set list listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 
