@@ -86,6 +86,7 @@ catch /^Vim\%((\a\+)\)\=:E185/
       silent! exe '!curl -fLo ~/.vim/colors/seoul256mod.vim --create-dirs https://raw.githubusercontent.com/bruhtus/dotfiles/master/.config/nvim/colors/seoul256mod.vim'
       colo seoul256mod
       if $TERM != 'linux' && has('termguicolors') | set termguicolors | endif
+      if &showmode | set noshowmode | endif
     endif
   endfunction
   command! ColorsOn call <SID>colorscheme_init()
