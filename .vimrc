@@ -558,3 +558,5 @@ autocmd vimrc FileType markdown
 autocmd vimrc FileType gitcommit
       \ setlocal spell complete+=kspell |
       \ nnoremap <expr> <buffer> <silent> <localleader>\ exists(':DiffGitCached') == 2 ? ':DiffGitCached<CR>' : ''
+
+" vim:et sta sw=2 sts=-69
