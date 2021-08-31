@@ -273,8 +273,11 @@ nnoremap <leader>s :s//g<left><left>
 
 if exists(':ter') | nnoremap <silent> <leader>m :ter<CR>| endif
 
-" Section: plugin mappings (except quickr-preview.vim and fzf)
+" Section: plugin mappings and options (except quickr-preview.vim and fzf)
 
+let g:sneak#label = 1
+let g:sneak#use_ic_scs = 1
+let g:sneak#target_labels = ';aszxcfvqwertyuiopbnmABCEFGIJKNOPQRSTUVZ'
 nmap <leader>k <Plug>SneakLabel_s
 nmap <leader>j <Plug>SneakLabel_S
 nmap <leader>n <Plug>(Bufstop-preview)
