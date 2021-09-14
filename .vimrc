@@ -1,6 +1,6 @@
-" Section: check patch and remove autocmd related to vimrc augroup
+" Section: safety guard
 
-if !has('patch-7.0.001') | finish | endif
+if v:version < 700 | finish | endif
 
 augroup vimrc
   autocmd!
