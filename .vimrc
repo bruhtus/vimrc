@@ -369,6 +369,9 @@ set cpo&vim laststatus=2 noshowmode
 function! StatuslineComponent() abort
 
   if hlexists('NormalModeColor')
+        \ && hlexists('InsertModeColor')
+        \ && hlexists('VisualModeColor')
+        \ && hlexists('CommandModeColor')
     if &showmode | set noshowmode | endif
     if mode() ==# 'n'
       let w:mode ='%#NormalModeColor# '
