@@ -59,7 +59,7 @@ try
 catch /^Vim\%((\a\+)\)\=:E117/
   function! s:pack_init()
     if empty(glob('~/.vim/autoload/plug.vim'))
-      silent! exe '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+      silent! exe '!curl --no-progress-meter -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
       call plug#begin('~/.vim/packed')
       let g:plug_window = 'topleft new'
@@ -87,7 +87,7 @@ try
 catch /^Vim\%((\a\+)\)\=:E185/
   function! s:colorscheme_init()
     if empty(glob('~/.vim/colors/seoul256mod.vim'))
-      silent! exe '!curl -fLo ~/.vim/colors/seoul256mod.vim --create-dirs https://raw.githubusercontent.com/bruhtus/dotfiles/master/.config/nvim/colors/seoul256mod.vim'
+      silent! exe '!curl --no-progress-meter -fLo ~/.vim/colors/seoul256mod.vim --create-dirs https://raw.githubusercontent.com/bruhtus/dotfiles/master/.config/nvim/colors/seoul256mod.vim'
       colo seoul256mod
       if $TERM !=# 'linux' && has('termguicolors')
         let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
