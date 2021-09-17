@@ -72,7 +72,7 @@ catch /^Vim\%((\a\+)\)\=:E117/
     endif
   endfunction
 
-  command! PlugOn call <SID>pack_init() | PlugInstall
+  command! PlugOn call s:pack_init() | PlugInstall
 endtry
 
 " Section: colorscheme
@@ -89,7 +89,7 @@ catch /^Vim\%((\a\+)\)\=:E185/
       if &showmode | set noshowmode | endif
     endif
   endfunction
-  command! ColorsOn call <SID>colorscheme_init()
+  command! ColorsOn call s:colorscheme_init()
 endtry
 
 " Section: disable default plugin
@@ -449,7 +449,7 @@ autocmd vimrc BufEnter *
       \ else                         |
       \   unlet b:root_enabled       |
       \   silent! lcd %:p:h          |
-      \   call <SID>root_toggle()    |
+      \   call s:root_toggle()       |
       \ endif
 
 nnoremap <silent> - :<C-u>call <SID>root_toggle()<CR>
