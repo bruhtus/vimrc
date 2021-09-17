@@ -86,7 +86,6 @@ catch /^Vim\%((\a\+)\)\=:E185/
       silent! exe '!curl -fLo ~/.vim/colors/seoul256mod.vim --create-dirs https://raw.githubusercontent.com/bruhtus/dotfiles/master/.config/nvim/colors/seoul256mod.vim'
       colo seoul256mod
       if $TERM != 'linux' && has('termguicolors') | set termguicolors | endif
-      if &showmode | set noshowmode | endif
     endif
   endfunction
   command! ColorsOn call s:colorscheme_init()
@@ -362,6 +361,7 @@ set cpo&vim laststatus=2 noshowmode
 function! StatuslineComponent() abort
 
   if hlexists('NormalModeColor')
+    if &showmode | set noshowmode | endif
     if mode() ==# 'n'
       let w:mode ='%#NormalModeColor# '
     elseif mode() ==# v:insertmode
