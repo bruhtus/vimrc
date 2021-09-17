@@ -244,8 +244,8 @@ nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
 
-nnoremap cn *``"_cgn
-nnoremap cN #``"_cgN
+nnoremap cn :%s/<C-r><C-w>//gc<left><left><left>
+nnoremap cN :%s/<C-r><C-a>//gc<left><left><left>
 
 nnoremap Y y$
 nnoremap J m`J``
