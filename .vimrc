@@ -134,7 +134,10 @@ set nobackup noswapfile nostartofline
 set ignorecase smartcase incsearch
 set list listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 
-set viminfo+=n~/.cache/vim/viminfo
+if !isdirectory(expand('~/.local/share/vim'))
+  call mkdir(expand('~/.local/share/vim'))
+endif
+set viminfo+=n~/.local/share/vim/viminfo
 set belloff=all backspace=indent,eol,start nrformats-=octal
 set display+=lastline autoread
 set sessionoptions-=options sessionoptions+=globals
