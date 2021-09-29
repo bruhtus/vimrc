@@ -123,12 +123,12 @@ set splitbelow splitright number relativenumber
 set wildmode=longest:full,full
 set wildignore=*/.git/*,*.pdf,*.jpg,*jpeg,*.png,*.epub,*.mobi
 
-set autoindent softtabstop=-69 shiftwidth=2 shiftround
-autocmd vimrc BufEnter *
+set autoindent shiftround smarttab shiftwidth=2 softtabstop=-69
+autocmd vimrc BufNewFile,BufRead,FileType *
       \ execute 'setlocal '
-      \ . (search('^\t', 'n') && !search('^  ', 'n') ? 'noexpandtab nosmarttab tabstop=2' :
-      \ search('^\t', 'n') && search('^  ', 'n') ? 'noexpandtab smarttab' :
-      \ 'expandtab smarttab')
+      \ . (search('^\t', 'n') && !search('^  ', 'n') ? 'tabstop=2 no' :
+      \ search('^\t', 'n') && search('^  ', 'n') ? 'no' :
+      \ '') . 'expandtab'
 
 set nobackup noswapfile nostartofline
 set ignorecase smartcase incsearch
@@ -401,8 +401,8 @@ function! StatuslineComponent() abort
   let l:git = '%{GitBranchName()}'
   let l:sep = '%='
   let l:line = '  %3l/%L'
-  let l:tab = "%{&expandtab && &smarttab ? ' sw='.&shiftwidth.' ' :
-        \ !&expandtab && !&smarttab ? ' ts='.&tabstop.' ' :
+  let l:tab = "%{&expandtab ? ' sw='.&shiftwidth.' ' :
+        \ &tabstop == &shiftwidth ? ' ts='.&tabstop.' ' :
         \ ' sw='.&shiftwidth.',ts='.&tabstop.' '}"
   return w:mode.'%*'.l:tab.l:readonly.l:filename.l:mod.l:sep.l:git.'  '.l:ft.l:line
 endfunction
