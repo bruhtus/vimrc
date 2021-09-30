@@ -140,7 +140,7 @@ endif
 set viminfo+=n~/.local/share/vim/viminfo
 set belloff=all backspace=indent,eol,start nrformats-=octal
 set display+=lastline autoread
-set sessionoptions-=options sessionoptions+=globals
+set sessionoptions-=options sessionoptions-=curdir sessionoptions+=globals
 set viewoptions-=options shortmess-=S shortmess+=F
 set nolangremap langnoremap
 
