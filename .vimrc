@@ -518,10 +518,12 @@ nnoremap <silent> <leader><Space> :<C-u>call <SID>mark_goto()<CR>
 " Section: fzf
 
 autocmd vimrc FileType fzf
-      \ let b:ruler = &ruler            |
-      \ set noruler
-      \| autocmd BufLeave <buffer>
-      \  let &ruler = b:ruler           |
+      \ let b:ruler = &ruler                  |
+      \ let b:termguicolors = &termguicolors  |
+      \ set noruler notermguicolors           |
+      \  autocmd BufLeave <buffer>
+      \  let &ruler = b:ruler                 |
+      \  let &termguicolors = b:termguicolors |
       \  unlet b:ruler
 
 if executable('rg')
