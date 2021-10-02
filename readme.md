@@ -1,4 +1,4 @@
-# Minimalist Version of Bruhtus' Neovim Config
+# Minimalist Version of Bruhtus' Vim Config
 
 This repo is for one-file vim configuration or vimrc. The benefits of using one-file vim config:
 - Only need to download one file.
