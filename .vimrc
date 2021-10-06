@@ -79,21 +79,11 @@ endtry
 
 try
   colo seoul256mod
-  if $TERM !=# 'linux' && has('termguicolors')
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
-  endif
 catch /^Vim\%((\a\+)\)\=:E185/
   function! s:colorscheme_init()
     if empty(glob('~/.vim/colors/seoul256mod.vim'))
       silent! exe '!curl --no-progress-meter -fLo ~/.vim/colors/seoul256mod.vim --create-dirs https://raw.githubusercontent.com/bruhtus/dotfiles/master/.config/nvim/colors/seoul256mod.vim'
       colo seoul256mod
-      if $TERM !=# 'linux' && has('termguicolors')
-        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-        set termguicolors
-      endif
     endif
   endfunction
   command! ColorsOn call s:colorscheme_init()
@@ -518,12 +508,10 @@ nnoremap <silent> <leader><Space> :<C-u>call <SID>mark_goto()<CR>
 " Section: fzf
 
 autocmd vimrc FileType fzf
-      \ let b:ruler = &ruler                  |
-      \ let b:termguicolors = &termguicolors  |
-      \ set noruler notermguicolors           |
+      \ let b:ruler = &ruler  |
+      \ set noruler           |
       \  autocmd BufLeave <buffer>
-      \  let &ruler = b:ruler                 |
-      \  let &termguicolors = b:termguicolors |
+      \  let &ruler = b:ruler |
       \  unlet b:ruler
 
 if executable('rg')
