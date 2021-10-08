@@ -509,7 +509,8 @@ function! s:mark_goto()
   let l:mark = nr2char(getchar())
   redraw
   try
-    execute 'normal! `' . l:mark . 'zz'
+    execute 'normal! `' . l:mark
+    norm! zz
   catch
   endtry
 endfunction
