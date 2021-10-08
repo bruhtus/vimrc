@@ -561,7 +561,7 @@ autocmd vimrc FileType qf
       \ nmap <buffer> <nowait> d <C-d>
       \| nmap <buffer> <nowait> u <C-u>
       \| nmap <buffer> <silent> i :cclose <Bar> lclose <Bar> pclose<CR>
-      \| nmap <buffer> <silent> <nowait> m <CR>zz
+      \| nmap <buffer> <silent> <nowait> m <CR>
       \| nmap <buffer> <nowait> <Space> <Plug>(quickr_preview)
 
 autocmd vimrc QuickFixCmdPost [^l]* cwindow
