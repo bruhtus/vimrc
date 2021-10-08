@@ -261,6 +261,8 @@ nnoremap <expr> <silent> ZK
 nnoremap <silent> ZH :<C-u>put!=repeat((nr2char(10)), v:count1)<Bar>']+1<CR>
 nnoremap <silent> ZN :<C-u>put =repeat((nr2char(10)), v:count1)<Bar>'[-1<CR>
 
+nnoremap <leader>a :%s/.*.*\n//c<left><left><left><left><left><left><left>
+
 cnoremap <C-k> <up>
 cnoremap <C-j> <down>
 
