@@ -165,7 +165,7 @@ if executable('rg')
   set grepformat=%f:%l:%c:%m,%f
   nnoremap <silent> <BS> :execute "lgetexpr system('" . &grepprg . ' ' . expand("<cword>") . "')"<CR>
 else
-  nnoremap <silent> <BS> :execute "lvimgrep /\\<" . expand("<cword>") . "\\>/j **"<CR>
+  nnoremap <silent> <BS> :execute 'lvimgrep /\v<' . expand('<cword>') . '>/j **'<CR>
 endif
 
 nnoremap <S-Tab> <C-^>
@@ -259,7 +259,7 @@ nnoremap Q :lvimgrep /\v/j %<left><left><left><left>
 
 nnoremap ZX :w<CR>
 nnoremap <silent> ZA :on<CR>
-nnoremap <silent> ZS :execute "lvimgrep /\\<" . expand("<cword>") . "\\>/j %"<CR>
+nnoremap <silent> ZS :execute 'lvimgrep /\v<' . expand('<cword>') . '>/j %'<CR>
 nnoremap <silent> ZD :reg<CR>
 
 nnoremap <expr> <silent> U (v:count ># 0 ? "m'" . v:count : '') . ":<C-u>execute 't +'. v:count<CR>=="
