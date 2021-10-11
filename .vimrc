@@ -260,7 +260,8 @@ nnoremap Q :lvimgrep /\v/j %<left><left><left><left>
 nnoremap ZX :w<CR>
 nnoremap <silent> ZA :on<CR>
 nnoremap <silent> ZS :execute 'lvimgrep /\v<' . expand('<cword>') . '>/j %'<CR>
-nnoremap <silent> ZD :reg<CR>
+nnoremap <silent> ZD :execute 'lvimgrep /' . expand('<cWORD>') . '/j %'<CR>
+nnoremap <silent> ZC :reg<CR>
 
 nnoremap <expr> <silent> U (v:count ># 0 ? "m'" . v:count : '') . ":<C-u>execute 't +'. v:count<CR>=="
 nnoremap <expr> <silent> ZU (v:count ># 0 ? "m'" . v:count : '') . ":<C-u>execute 't -1-'. v:count<CR>=="
