@@ -270,11 +270,12 @@ nnoremap <expr> <silent> ZU
       \ (v:count > 0 ? "m'" . v:count : '') . ":<C-u>execute 't -1-' . v:count<CR>"
 
 nnoremap <expr> <silent> ZJ
-      \ v:count1 ># 1 ? ":<C-u>execute '+1k` <Bar> move +'. v:count1<CR>==" :
-      \ ":<C-u>execute 'move +'. v:count1<CR>=="
+      \ (v:count1 > 1 ? "m'" . v:count1 : '')
+      \ . ":<C-u>execute 'lockmarks move +' . v:count1<CR>"
+
 nnoremap <expr> <silent> ZK
-      \ v:count1 ># 1 ? ":<C-u>execute '-1k` <Bar> move -1-'. v:count1<CR>==" :
-      \ ":<C-u>execute 'move -1-'. v:count1<CR>=="
+      \ (v:count1 > 1 ? "m'" . v:count1 : '')
+      \ . ":<C-u>execute 'lockmarks move -1-' . v:count1<CR>"
 
 nnoremap <silent> ZH :<C-u>put!=repeat((nr2char(10)), v:count1)<Bar>']+1<CR>
 nnoremap <silent> ZN :<C-u>put =repeat((nr2char(10)), v:count1)<Bar>'[-1<CR>
