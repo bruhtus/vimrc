@@ -263,8 +263,12 @@ nnoremap <silent> ZS :execute 'lvimgrep /\v<' . expand('<cword>') . '>/j %'<CR>
 nnoremap <silent> ZD :execute 'lvimgrep /' . expand('<cWORD>') . '/j %'<CR>
 nnoremap <silent> ZC :reg<CR>
 
-nnoremap <expr> <silent> U (v:count ># 0 ? "m'" . v:count : '') . ":<C-u>execute 't +'. v:count<CR>=="
-nnoremap <expr> <silent> ZU (v:count ># 0 ? "m'" . v:count : '') . ":<C-u>execute 't -1-'. v:count<CR>=="
+nnoremap <expr> <silent> U
+      \ (v:count > 0 ? "m'" . v:count : '') . ":<C-u>execute 't +' . v:count<CR>"
+
+nnoremap <expr> <silent> ZU
+      \ (v:count > 0 ? "m'" . v:count : '') . ":<C-u>execute 't -1-' . v:count<CR>"
+
 nnoremap <expr> <silent> ZJ
       \ v:count1 ># 1 ? ":<C-u>execute '+1k` <Bar> move +'. v:count1<CR>==" :
       \ ":<C-u>execute 'move +'. v:count1<CR>=="
