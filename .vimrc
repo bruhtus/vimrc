@@ -285,6 +285,14 @@ xnoremap <expr> <silent> ZK
       \ (v:count1 > 1 ? ':<C-u>execute ' . '"' . "'<-1k' <Bar> " : ':<C-u>execute "')
       \ . "'<,'>move '<-1-" . '" . v:count1<CR>gv'
 
+xnoremap <expr> <silent> zj
+      \ (v:count > 0 ? "m'" . v:count : '')
+      \ . ':<C-u>execute "' . "'<,'>t '>+" . '" . v:count<CR>'
+
+xnoremap <expr> <silent> zk
+      \ (v:count > 0 ? "m'" . v:count : '')
+      \ . ':<C-u>execute "' . "'<,'>t '<-1-" . '" . v:count<CR>'
+
 nnoremap <silent> ZH :<C-u>put!=repeat((nr2char(10)), v:count1)<Bar>']+1<CR>
 nnoremap <silent> ZN :<C-u>put =repeat((nr2char(10)), v:count1)<Bar>'[-1<CR>
 
