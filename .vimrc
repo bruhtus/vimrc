@@ -594,16 +594,6 @@ autocmd vimrc QuickFixCmdPost [^l]* cwindow
 autocmd vimrc QuickFixCmdPost l*    lwindow
 autocmd vimrc WinEnter * if winnr('$') == 1 && &buftype == 'quickfix' | q | endif
 
-" Section: markdown filetype
-
-autocmd vimrc FileType markdown
-      \ nnoremap <buffer> <silent> ]] m':<C-u>call search('\v^\S*(#)', 'W')<CR>zz
-      \| nnoremap <buffer> <silent> [[ m':<C-u>call search('\v^\S*(#)', 'zbW')<CR>zz
-      \| nnoremap <buffer> <silent> ][ m':<C-u>call search('\v%$\|\S.*\n+(#)', 'W')<CR>zz
-      \| nnoremap <buffer> <silent> [] m':<C-u>call search('\v\S.*\n+(#)', 'bW')<CR>zz
-      \| onoremap <buffer> <silent> ]] :<C-u>call search('\v^\S*(#)', 'W')<CR>
-      \| onoremap <buffer> <silent> [[ :<C-u>call search('\v^\S*(#)', 'zbW')<CR>
-
 " Section: gitcommit filetype
 
 autocmd vimrc FileType gitcommit
