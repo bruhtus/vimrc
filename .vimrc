@@ -312,13 +312,20 @@ if exists(':ter') | nnoremap <silent> <leader>m :ter<CR>| endif
 
 " Section: plugin mappings and options (except quickr-preview.vim and fzf)
 
-let g:sneak#label = 1
-let g:sneak#use_ic_scs = 1
-let g:sneak#target_labels = ';aszxcfvqwertyuiopbnmABCEFGIJKNOPQRSTUVZ'
-nmap <leader>k <Plug>SneakLabel_s
-nmap <leader>j <Plug>SneakLabel_S
-nmap <leader>n <Plug>(Bufstop-preview)
+nmap <expr> <silent> <leader>k
+      \ (!exists('g:loaded_sneak_plugin') ?
+      \ ":<C-u>let g:sneak#label = 1 <Bar>
+      \ let g:sneak#use_ic_scs = 1 <Bar>
+      \ let g:sneak#target_labels = ';aszxcfvqwertyuiopbnmABCEFGIJKNOPQRSTUVZ'<CR>"
+      \ : '') . '<Plug>SneakLabel_s'
+nmap <expr> <silent> <leader>j
+      \ (!exists('g:loaded_sneak_plugin') ?
+      \ ":<C-u>let g:sneak#label = 1 <Bar>
+      \ let g:sneak#use_ic_scs = 1 <Bar>
+      \ let g:sneak#target_labels = ';aszxcfvqwertyuiopbnmABCEFGIJKNOPQRSTUVZ'<CR>"
+      \ : '') . '<Plug>SneakLabel_S'
 
+nmap <leader>n <Plug>(Bufstop-preview)
 nmap cx <Plug>(Exchange)
 nmap cxx <Plug>(ExchangeLine)
 
