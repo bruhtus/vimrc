@@ -253,6 +253,9 @@ nnoremap g# g#zz
 nnoremap cu :%s/\v<<C-r><C-w>>//gc<left><left><left>
 nnoremap cU :%s/\v<<C-r><C-a>>//gc<left><left><left>
 
+nnoremap cd :s/<C-r><C-w>//gc<left><left><left>
+nnoremap cD :s/<C-r><C-a>//gc<left><left><left>
+
 nnoremap Y y$
 nnoremap J m`J``
 nnoremap Q :lvimgrep /\v/j %<left><left><left><left>
