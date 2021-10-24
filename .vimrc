@@ -80,7 +80,7 @@ endtry
 try
   let g:seoul256_srbg = 1
   colo seoul256mod
-  if $TERM !=# 'linux' && has('termguicolors')
+  if exists($DISPLAY) && has('termguicolors')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
@@ -92,7 +92,7 @@ catch /^Vim\%((\a\+)\)\=:E185/
       silent! exe '!curl --no-progress-meter -fLo ~/.vim/colors/seoul256mod.vim --create-dirs https://raw.githubusercontent.com/bruhtus/dotfiles/master/.config/nvim/colors/seoul256mod.vim'
       let g:seoul256_srbg = 1
       colo seoul256mod
-      if $TERM !=# 'linux' && has('termguicolors')
+      if exists($DISPLAY) && has('termguicolors')
         let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
         let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
         set termguicolors
