@@ -403,9 +403,6 @@ function! s:gitbranch_detect(path) abort
   endif
 endfunction
 
-let s:save_cpo = &cpo
-set cpo&vim laststatus=2 noshowmode
-
 function! StatuslineComponent() abort
 
   if hlexists('NormalModeColor')
@@ -480,9 +477,6 @@ autocmd vimrc WinLeave *
       \ else                                   |
       \   call StatuslineLoad('inactive')      |
       \ endif
-
-let &cpo = s:save_cpo
-unlet s:save_cpo
 
 " Section: trim trailing whitespace
 
