@@ -133,6 +133,7 @@ autocmd vimrc BufNewFile,BufRead,FileType *
       \ search('^\t', 'n') && search('^  ', 'n') ? 'no' :
       \ '') . 'expandtab'
 
+set laststatus=2 noshowmode
 set nobackup noswapfile nostartofline
 set ignorecase smartcase incsearch
 set list listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
