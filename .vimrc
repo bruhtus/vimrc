@@ -174,7 +174,7 @@ execute "set <M-a>=\ea"
 execute "set <M-~>=\e~"
 inoremap <silent> <M-a> <C-g>u<C-o>a
 inoremap <silent> <M-~> <C-g>u<C-o>~<C-[>
-inoremap <silent> <M-U> <C-[>:t .<CR>==
+inoremap <silent> <M-U> <C-[>:t .<CR>
 
 if exists(':stopinsert') == 2
   execute "set <M-w>=\ew"
