@@ -1,10 +1,7 @@
 " Section: safety guard
 
 if v:version < 700 | finish | endif
-
-augroup vimrc
-  autocmd!
-augroup END
+augroup vimrc | autocmd! | augroup END
 
 " Section: packages
 
