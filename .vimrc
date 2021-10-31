@@ -147,7 +147,7 @@ set nolangremap langnoremap
 
 if exists('+cursorlineopt') | set cursorline cursorlineopt=number | endif
 if exists('+wildmenu') | set wildmenu | endif
-if exists('&termwinkey') | set termwinkey=<C-p> | endif
+if exists('+termwinkey') | set termwinkey=<C-p> | endif
 if v:version > 703 || v:version == 703 && has('patch541') | set formatoptions+=j | endif
 syntax on | filetype plugin indent on
 
