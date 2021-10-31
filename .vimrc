@@ -128,10 +128,10 @@ set wildignore=*/.git/*,*.pdf,*.jpg,*jpeg,*.png,*.epub,*.mobi
 
 set autoindent shiftround smarttab shiftwidth=2 softtabstop=-69
 autocmd vimrc BufNewFile,BufRead,FileType *
-      \ execute 'setlocal '
-      \ . (search('^\t', 'n') && !search('^  ', 'n') ? 'tabstop=2 no' :
-      \ search('^\t', 'n') && search('^  ', 'n') ? 'no' :
-      \ '') . 'expandtab'
+      \ execute 'let '
+      \ search('^\t', 'n') && !search('^  ', 'n') ? '[&l:ts, &l:et] = [&sw, 0]' :
+      \ search('^\t', 'n') && search('^  ', 'n') ? '&l:et = 0' :
+      \ '&l:et = 1'
 
 set laststatus=2 noshowmode
 set nobackup noswapfile nostartofline
