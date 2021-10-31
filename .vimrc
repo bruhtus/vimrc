@@ -174,9 +174,11 @@ inoremap <silent> <M-a> <C-g>u<C-o>a
 inoremap <silent> <M-~> <C-g>u<C-o>~<C-[>
 inoremap <silent> <M-U> <C-[>:t .<CR>
 
+execute "set <M-w>=\ew"
 if exists(':stopinsert') == 2
-  execute "set <M-w>=\ew"
   inoremap <silent> <M-w> <C-o>w<C-o>:stopinsert<CR>
+else
+  inoremap <silent> <M-w> <C-o>w<C-[>l
 endif
 
 nnoremap <C-j> <C-w>j
