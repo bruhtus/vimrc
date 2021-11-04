@@ -193,7 +193,7 @@ nnoremap <C-d> <C-d>M^
 nnoremap <C-f> <C-f>H^
 nnoremap <C-b> <C-b>L^
 
-vnoremap <C-y> "+y
+xnoremap <leader>y "+y
 nnoremap <C-p> "+gp
 nnoremap <silent> <leader>p :put +<CR>
 
