@@ -230,8 +230,8 @@ nnoremap <silent> gh m':<C-u>call search('^'. matchstr(getline('.'), '\(^\s*\)')
 inoremap , <C-g>u,
 inoremap . .<C-g>u
 
-vnoremap < <gv
-vnoremap > >gv
+xnoremap < <gv
+xnoremap > >gv
 
 nnoremap c "_c
 nnoremap C "_C
@@ -241,7 +241,7 @@ nnoremap x "_x
 nnoremap X "_X
 nnoremap D "_D
 nnoremap <leader>d "_d
-vnoremap <leader>d "_d
+xnoremap <leader>d "_d
 
 nnoremap n nzz
 nnoremap N Nzz
