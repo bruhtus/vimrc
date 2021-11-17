@@ -10,5 +10,5 @@ This repo is for one-file vim configuration or vimrc. The benefits of using one-
 
 - Using [vim-plug](https://github.com/junegunn/vim-plug) instead of [minpac](https://github.com/k-takata/minpac) as plugin manager for simplicity (one file rather than one git repo).
 - Only have 10 plugins rather than 20+ plugins.
-- Only have around 500 lines rather than 1000+ lines.
+- Only have around 600 lines rather than 1000+ lines.
 - Not gonna change much (static version).
