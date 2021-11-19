@@ -140,7 +140,7 @@ if !isdirectory(expand('~/.local/share/vim'))
 endif
 set viminfo+=n~/.local/share/vim/viminfo
 set belloff=all backspace=indent,eol,start nrformats-=octal
-set display+=lastline autoread
+set display+=lastline autoread history=10000
 set sessionoptions-=options sessionoptions-=curdir sessionoptions+=globals
 set viewoptions-=options shortmess-=S shortmess+=F
 set nolangremap langnoremap
