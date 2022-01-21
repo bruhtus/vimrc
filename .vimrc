@@ -125,10 +125,16 @@ set wildignore=*/.git/*,*.pdf,*.jpg,*jpeg,*.png,*.epub,*.mobi
 
 set autoindent shiftround smarttab shiftwidth=2 softtabstop=-69
 autocmd vimrc BufNewFile,BufRead,FileType *
-      \ execute 'let '
-      \ search('^\t', 'n') && !search('^  ', 'n') ? '[&l:ts, &l:et] = [&sw, 0]' :
-      \ search('^\t', 'n') && search('^  ', 'n') ? '&l:et = 0' :
-      \ '&l:et = 1'
+        \ let b:indent_spaces = search('^  \+', 'wn') |
+        \ let b:indent_tabs = search('^\t', 'wn') |
+        \ let b:tab_with_space = search('\t\+ \+', 'wn') |
+        \ let b:space_with_tab = search(' \+\t\+', 'wn') |
+        \ execute 'let '
+        \ b:indent_tabs && !b:indent_spaces && !b:tab_with_space && !b:space_with_tab ?
+        \ '[&l:ts, &l:et] = [&sw, 0]' :
+        \ (b:indent_tabs && b:indent_spaces) || b:tab_with_space || b:space_with_tab ?
+        \ '&l:et = 0' :
+        \ '&l:et = 1'
 
 set laststatus=2 noshowmode
 set nobackup noswapfile nostartofline
