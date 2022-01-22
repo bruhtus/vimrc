@@ -246,8 +246,10 @@ nnoremap S "_S
 nnoremap x "_x
 nnoremap X "_X
 nnoremap D "_D
-nnoremap <leader>d "_d
-xnoremap <leader>d "_d
+nnoremap d "_d
+xnoremap d "_d
+nnoremap <leader>d d
+xnoremap <leader>d d
 
 nnoremap n nzz
 nnoremap N Nzz
