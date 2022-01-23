@@ -251,6 +251,9 @@ xnoremap d "_d
 nnoremap <leader>d d
 xnoremap <leader>d d
 
+nnoremap <leader>D D
+xnoremap <leader>D D
+
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap * *zz
