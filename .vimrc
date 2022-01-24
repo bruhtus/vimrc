@@ -582,7 +582,6 @@ let g:fzf_preview_window = ['up:50%:hidden', 'ctrl-/']
 
 " Note: need to use original command for lazy load in vim-plug
 nnoremap <silent> <leader>i :<C-u>silent! Files<CR>
-nnoremap <silent> <leader>f :<C-u>silent! Files ~<CR>
 nnoremap <silent> <leader>h :<C-u>silent! Lines<CR>
 nnoremap <silent> <leader>u :<C-u>silent! BLines<CR>
 nnoremap <silent> <leader>o :<C-u>silent! Rg<CR>
