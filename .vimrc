@@ -443,7 +443,11 @@ function! StatuslineComponent() abort
   let l:readonly = '%r'
   let l:mod = "%{&modified ? '  [+]' : !&modifiable ? '  [-]' : ''}"
   let l:ft = "%{winwidth(0) > 70 ? (len(&filetype) ? &filetype : 'no ft') : ''}"
-  let l:git = '%{GitBranchName()}'
+  let l:git = "  %<%([%{winwidth(0) > 100 ? GitBranch() :
+        \ winwidth(0) > 70 ?
+        \ (strlen(GitBranch()) > 10 ? '...' . GitBranchName()[-7:]
+        \ : GitBranchName())
+        \ : ''}]%)"
   let l:sep = '%='
   let l:line = '  %3l/%L'
   let l:tab = "%{&expandtab ? ' sw='.&shiftwidth.' ' :
