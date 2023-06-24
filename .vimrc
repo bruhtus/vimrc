@@ -419,7 +419,8 @@ function! StatuslineComponent() abort
         \ && hlexists('InsertModeColor')
         \ && hlexists('VisualModeColor')
         \ && hlexists('CommandModeColor')
-    if &showmode | set noshowmode | endif
+        \ && &laststatus == 2
+        \ && !&showmode
     if mode() ==# 'n'
       let w:mode ='%#NormalModeColor# '
     elseif mode() ==# v:insertmode
